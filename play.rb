@@ -6,7 +6,8 @@ player = gets.chomp.downcase.to_s
 if player == ("lizard") || player == ("spock")
 	raise ArgumentError.new("The computer thinks you're a nerd and refuses to play.")
 end
-if !@VictoryCheck.include?(player) #Check to see if that move in the VictoryCheck Hash. If it is, then that move is valid!
+if !@VictoryCheck.include?(player) #Check to see if that move is a Key in
+#the VictoryCheck Hash. If it is not there, then that move is invalid!
 	raise ArgumentError.new("The only input allowed is Rock, Paper, or Scissors.")
 end
 computer = ["Rock","Paper","Scissors"].sample.chomp.downcase
